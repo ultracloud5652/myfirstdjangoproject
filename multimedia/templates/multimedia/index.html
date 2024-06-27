@@ -1,0 +1,19 @@
+<!-- multimedia/templates/multimedia/index.html -->
+{% extends "multimedia/base.html" %}
+
+{% block content %}
+<h1>Videos</h1>
+{% for video in videos %}
+    <div>
+        <h2>{{ video.title }}</h2>
+        <p>{{ video.description }}</p>
+        <video width="320" height="240" controls>
+            <source src="{{ video.file.url }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+{% empty %}
+    <p>No videos available.</p>
+{% endfor %}
+{% endblock %}
+
