@@ -1,5 +1,5 @@
 # multimedia/urls.py
-from django.urls import path
+from django.urls import path # type: ignore
 from . import views
 
 urlpatterns = [
